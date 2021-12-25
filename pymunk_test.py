@@ -16,11 +16,8 @@ draw_options = pymunk.pygame_util.DrawOptions(surface)
 # pymunk variables
 space = pymunk.Space()
 space.gravity = 0, 4000
-count = 5
 x1 = 1
 y1 = 1
-s = 0
-d = 0
 
 segment_shape = pymunk.Segment(space.static_body, (1, HEIGHT), (WIDTH, HEIGHT), 5)
 space.add(segment_shape)
@@ -58,14 +55,11 @@ def create_figure(space, pos):
         space.add(circle_body, circle_shape)
 
 
-while count > 0:
-    x1 = x1 + randrange(140, 250)
-    x2 = x1 + randrange(60, 140)
-    y1 = y1 + randrange(80, 160)
-    print(x1, x2, y1)
+while x1 < HEIGHT:
+    x1 = x1 + randrange(40, 1100)
+    x2 = x1 + randrange(120, 200)
+    y1 = y1 + randrange(180, 240)
     platforms(x1, x2, y1)
-    x1 = x2
-    count -= 1
 
 while True:
     surface.fill(pg.Color('blue'))
