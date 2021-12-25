@@ -62,7 +62,7 @@ while x1 < HEIGHT:
     platforms(x1, x2, y1)
 
 while True:
-    surface.fill(pg.Color('blue'))
+    surface.fill(pg.Color('black'))
     
     for i in pg.event.get():
         if i.type == pg.QUIT:
