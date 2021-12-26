@@ -45,7 +45,7 @@ def create_figure(space, pos):
     circle_body = pymunk.Body(mass, circle_moment)
     circle_body.position = pos
     circle_shape = pymunk.Circle(circle_body, radius)
-    circle_shape.elasticity = 0.4
+    circle_shape.elasticity = uniform (0.1, 1.2)
     circle_shape.friction = 1.0
     circle_shape.color = [randrange(256) for i in range(4)]
     if mass // 2 == 1 or mass // 2 == 4:
@@ -57,7 +57,7 @@ def create_figure(space, pos):
 while x1 < HEIGHT:
     x1 = x1 + randrange(40, 1100)
     x2 = x1 + randrange(120, 200)
-    y1 = y1 + randrange(180, 240)
+    y1 = y1 + randrange(180, 200)
     platforms(x1, x2, y1)
 
 while True:
