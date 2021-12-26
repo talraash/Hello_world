@@ -40,15 +40,14 @@ def create_figure(space, pos):
     square_shape.elasticity = uniform (0.1, 1.2)
     square_shape.friction = 1.0
     square_shape.color = [randrange(256) for i in range(4)]
-    circle_body = pymunk.Body(mass, moment= 10)
+    radius = randrange(20, 40, 5)
+    circle_moment = pymunk.moment_for_circle(mass, (radius - 10), radius)
+    circle_body = pymunk.Body(mass, circle_moment)
     circle_body.position = pos
-    circle_shape = pymunk.Circle(circle_body, radius= randrange(20, 40, 5))
+    circle_shape = pymunk.Circle(circle_body, radius)
     circle_shape.elasticity = 0.4
     circle_shape.friction = 1.0
     circle_shape.color = [randrange(256) for i in range(4)]
-
-
-    
     if mass // 2 == 1 or mass // 2 == 4:
         space.add(square_body, square_shape)
     else:
